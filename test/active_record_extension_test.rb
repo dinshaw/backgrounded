@@ -3,20 +3,19 @@ require File.join(File.dirname(__FILE__), 'test_helper')
 class ActiveRecordExtensionTest < MiniTest::Test
 
   class Blog < ActiveRecord::Base
+    include Backgrounded::ActiveRecordExtension
     after_commit_backgrounded :do_something_else
     def do_something_else
     end
   end
   class User < ActiveRecord::Base
+    include Backgrounded::ActiveRecordExtension
     after_commit_backgrounded :do_stuff, :backgrounded => {:priority => :high}
     def do_stuff
     end
   end
 
   context '.after_commit_backgrounded' do
-    should 'be defined on ActiveRecord::Base' do
-      assert ActiveRecord::Base.respond_to?(:after_commit_backgrounded)
-    end
     context 'without options' do
       setup do
         @blog = Blog.new

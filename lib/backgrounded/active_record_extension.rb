@@ -16,4 +16,3 @@ module Backgrounded
     end
   end
 end
-ActiveRecord::Base.send(:include, Backgrounded::ActiveRecordExtension)

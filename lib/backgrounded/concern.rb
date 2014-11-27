@@ -17,4 +17,3 @@ module Backgrounded
     end
   end
 end
-Object.send(:include, Backgrounded::Concern)

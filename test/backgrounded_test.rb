@@ -3,6 +3,7 @@ require File.join(File.dirname(__FILE__), 'test_helper')
 class BackgroundedTest < MiniTest::Test
 
   class Dog
+    include Backgrounded::Concern
     def do_stuff
     end
     def self.do_something_else
