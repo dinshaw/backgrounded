@@ -7,10 +7,10 @@ rescue Bundler::BundlerError => e
   $stderr.puts "Run `bundle install` to install missing gems"
   exit e.status_code
 end
-require 'test/unit'
+require 'minitest/autorun'
 require 'shoulda'
 require 'pry'
-require 'mocha'
+require 'mocha/test_unit'
 require 'active_record'
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
@@ -20,5 +20,3 @@ require 'setup_database'
 
 Backgrounded.logger.level = Logger::DEBUG
 
-class Test::Unit::TestCase
-end

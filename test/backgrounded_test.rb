@@ -1,6 +1,6 @@
 require File.join(File.dirname(__FILE__), 'test_helper')
 
-class BackgroundedTest < Test::Unit::TestCase
+class BackgroundedTest < MiniTest::Test
 
   class Dog
     def do_stuff

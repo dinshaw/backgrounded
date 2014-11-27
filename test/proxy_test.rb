@@ -1,6 +1,6 @@
 require File.join(File.dirname(__FILE__), 'test_helper')
 
-class ProxyTest < Test::Unit::TestCase
+class ProxyTest < MiniTest::Test
   class Person
     def self.do_something_else
     end

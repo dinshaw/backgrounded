@@ -1,6 +1,6 @@
 require File.join(File.dirname(__FILE__), 'test_helper')
 
-class ActiveRecordExtensionTest < Test::Unit::TestCase
+class ActiveRecordExtensionTest < MiniTest::Test
 
   class Blog < ActiveRecord::Base
     after_commit_backgrounded :do_something_else
